@@ -7,15 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1fbWwqW29H0GM1ty8Q1DYB6xHqdM9HhGu
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
-!pip install anvil-uplink
+#!pip install anvil-uplink
 
 import anvil.server
 anvil.server.connect("D6SOHFGMNUW666RMON7YMVG3-I5YEXCCDPSRUNCJW")
 
-from google.colab import drive
+# from google.colab import drive
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
@@ -27,7 +27,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
 import pickle
-intents_file = open('/content/drive/MyDrive/Colab Notebooks/intents.json').read()
+intents_file = open('SongBot\static\intents.json').read()
 intents = json.loads(intents_file)
 
 import nltk
@@ -102,9 +102,9 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
-intents = json.loads(open('/content/drive/MyDrive/Colab Notebooks/intents.json').read())
-words = pickle.load(open('/content/drive/MyDrive/Colab Notebooks/words.pkl','rb'))
-classes = pickle.load(open('/content/drive/MyDrive/Colab Notebooks/classes.pkl','rb'))
+intents = json.loads(open('SongBot\static\intents.json').read())
+words = pickle.load(open('SongBot\static\words.pkl','rb'))
+classes = pickle.load(open('SongBot\static\classes.pkl','rb'))
 def clean_up_sentence(sentence):
     # tokenize the pattern - splitting words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -163,7 +163,7 @@ words=[]
 classes = []
 documents = []
 ignore_letters = ['!', '?', ',', '.']
-intents_file = open('/content/drive/MyDrive/Colab Notebooks/intents.json').read()
+intents_file = open('SongBot\static\intents.json').read()
 intents = json.loads(intents_file)
 
 for intent in intents['intents']:
@@ -240,11 +240,11 @@ model.save('chatbot_model.h5', hist)
 
 print("model created")
 
-!pip install ibm_watson
+#!pip install ibm_watson
 
-!pip install anvil-uplink
+#!pip install anvil-uplink
 
-!pip install anvil-uplink
+#!pip install anvil-uplink
 
 import anvil.server
 
