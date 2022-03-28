@@ -1,124 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <title>SongBot</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Chatbot Song recommender System</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+    <link href="static/sticky-menu.css" rel="stylesheet">
 </head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Welcome</a>
+            </div>
 
-<body>
-  <!-- partial:index.partial.html -->
-  <section class="msger">
-    <header class="msger-header">
-      <div class="msger-header-title">
-        <i class="fas fa-bug"></i> Songbot <i class="fas fa-bug"></i>
-      </div>
-    </header>
-
-    <main class="msger-chat">
-      <div class="msg left-msg">
-        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
-
-        <div class="msg-bubble">
-          <div class="msg-info">
-            <div class="msg-info-name">SongBot</div>
-            <div class="msg-info-time">12:45</div>
-          </div>
-
-          <div class="msg-text">
-            Hi, welcome to SongBot! Go ahead and send me a message. 😄
-          </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Chatbot</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#whatwedo">Feedback and Review</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Statistics</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+    <!-- Welcome   -->
+    <section id="welcome" class="welcome-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Chatbot Song recommender System</h1>
+                    <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518609878373-06d740f60d8b%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlzdGVuaW5nJTIwdG8lMjBtdXNpY3xlbnwwfHwwfHw%253D%26w%3D1000%26q%3D80&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Flistening-to-music&tbnid=BlRIbXg99K7DqM&vet=12ahUKEwjho_GE5Oj2AhUTjtgFHVjjDd0QMygGegUIARDbAQ..i&docid=t1LQqJTuWHSqYM&w=1000&h=667&q=people%20listening%20to%20music%20hd%20&ved=2ahUKEwjho_GE5Oj2AhUTjtgFHVjjDd0QMygGegUIARDbAQ">
+                    <a class="btn btn-primary page-scroll" href="#about">Click To Listen To music!</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </main>
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>About</h1>
+                    <p>Everyday, each and every person undergoes lot of troubles and the reliever of all the stress that are encountered is Music. If it is so, the vital part of hearing the song has to be in a facilitated way, that is player able to play the song in accordance to the person’s mood. 
+                        Recognizing the human emotions is considered to be a global consistency but depict variability among the humans on the basis of their abilities. 
+                        So, we would be combining multiple services and open-source tools to make a chatbot that recommends song based on the tone of the conservation on which the user is having with the Chatbot.</p>
+                        
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <form class="msger-inputarea">
-      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
-      <button type="submit" class="msger-send-btn">Send</button>
-    </form>
-  </section>
-  <!-- partial -->
-  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
-  <script>
+    <!-- What we do Section -->
+    <section id="whatwedo" class="whatwedo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Feedback and Review</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const msgerForm = get(".msger-inputarea");
-    const msgerInput = get(".msger-input");
-    const msgerChat = get(".msger-chat");
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Statistics</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-    // Icons made by Freepik from www.flaticon.com
-    const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
-    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
-    const BOT_NAME = "SongBot";
-    const PERSON_NAME = "You";
-
-    msgerForm.addEventListener("submit", event => {
-      event.preventDefault();
-
-      const msgText = msgerInput.value;
-      if (!msgText) return;
-
-      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
-      msgerInput.value = "";
-      botResponse(msgText);
-    });
-
-    function appendMessage(name, img, side, text) {
-      //   Simple solution for small apps
-      const msgHTML = `
-<div class="msg ${side}-msg">
-  <div class="msg-img" style="background-image: url(${img})"></div>
-
-  <div class="msg-bubble">
-    <div class="msg-info">
-      <div class="msg-info-name">${name}</div>
-      <div class="msg-info-time">${formatDate(new Date())}</div>
-    </div>
-
-    <div class="msg-text">${text}</div>
-  </div>
-</div>
-`;
-
-      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
-      msgerChat.scrollTop += 500;
-    }
-
-    function botResponse(rawText) {
-
-      // Bot Response
-      $.get("/get", { msg: rawText }).done(function (data) {
-        console.log(rawText);
-        console.log(data);
-        const msgText = data;
-        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-
-      });
-
-    }
-
-
-    // Utils
-    function get(selector, root = document) {
-      return root.querySelector(selector);
-    }
-
-    function formatDate(date) {
-      const h = "0" + date.getHours();
-      const m = "0" + date.getMinutes();
-
-      return `${h.slice(-2)}:${m.slice(-2)}`;
-    }
-
-
-
-  </script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
 
 </body>
 

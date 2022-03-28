@@ -10,7 +10,6 @@ Original file is located at
 # from google.colab import drive
 # drive.mount('/content/drive')
 
-#!pip install anvil-uplink
 
 import anvil.server
 anvil.server.connect("D6SOHFGMNUW666RMON7YMVG3-I5YEXCCDPSRUNCJW")
@@ -240,11 +239,7 @@ model.save('chatbot_model.h5', hist)
 
 print("model created")
 
-#!pip install ibm_watson
 
-#!pip install anvil-uplink
-
-#!pip install anvil-uplink
 
 import anvil.server
 
