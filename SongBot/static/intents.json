@@ -16,7 +16,7 @@
          "responses": ["You owe me one", "Ok...", "Sure..."]
         },
         {"tag": "name",
-         "patterns": ["what is your name", "what your name", "what should I call you", "how should I address you"],
+         "patterns": ["what is your name", "what should I call you", "how should I address you"],
          "responses": ["I dont have a name yet but I was thinking maybe Siri. That has a nice ring to it dont you think?", "Im not named yet, but I was thinking about calling myself Siri. Doesnt that sound nice?"],
          "context_set": "alex"
         },
@@ -63,11 +63,11 @@
          "patterns": ["tell me joke", "got any good jokes", "got jokes", "can you tell joke", "tell joke"],
          "responses": ["I ate a clock yesterday, it was very time-consuming.", "What did the Buddhist ask the hot dog vendor?\nMake me one with everything.",
          "You know why you never see elephants hiding up in trees?\nBecause they're really good at it.",
-         "What is red and smells like blue paint?\nRed paint.", "A bear walks into a restaurant and say's I want a grilllllled………………………………………cheese. The waiter says Whats with the pause?\nThe bear replies Whaddya mean, I’M A BEAR.",
+         "What is red and smells like blue paint?\n Red paint.", "A bear walks into a restaurant and say's I want a grilllllled………………………………………cheese. The waiter says Whats with the pause?\nThe bear replies Whaddya mean, I'M A BEAR.",
          "What do you call bears with no ears?\nB", "What do you get when you cross a dyslexic, an insomniac, and an agnostic?\nSomeone who lays awake at night wondering if there is a dog.",
          "Two gold fish are in a tank.\nOne looks at the other and says, You know how to drive this thing?!", 
          "As a scarecrow, people say I'm outstanding in my field. But hay, it's in my jeans.", 
-         "A guy goes into a lawyer's office and asks the lawyer: Excuse me, how much do you charge?\nThe lawyer responds: I charge £1,000 to answer three questions.\nBloody hell – That’s a bit expensive isn’t it?\nYes. What’s your third question?",
+         "A guy goes into a lawyer's office and asks the lawyer: Excuse me, how much do you charge?\nThe lawyer responds: I charge £1,000 to answer three questions.\n Bloody hell - That's a bit expensive isn't it?\n Yes. What's your third question?",
          "I have an EpiPen.\nMy friend gave it to me when he was dying, it seemed very important to him that I have it.",
          "Sometimes I tuck my knees into my chest and lean forward.\n That's just how I roll."],
          "context_set": "jokes"

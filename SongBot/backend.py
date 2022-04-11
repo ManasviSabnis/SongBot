@@ -20,7 +20,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
 import pickle
-intents_file = open('SongBot\static\intents.json').read()
+intents_file = open('static\intents.json').read()
 intents = json.loads(intents_file)
 
 import nltk
@@ -95,9 +95,9 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
-intents = json.loads(open('SongBot\static\intents.json').read())
-words = pickle.load(open('SongBot\static\words.pkl','rb'))
-classes = pickle.load(open('SongBot\static\classes.pkl','rb'))
+intents = json.loads(open('static\intents.json').read())
+words = pickle.load(open('static\words.pkl','rb'))
+classes = pickle.load(open('static\classes.pkl','rb'))
 def clean_up_sentence(sentence):
     # tokenize the pattern - splitting words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -156,7 +156,7 @@ words=[]
 classes = []
 documents = []
 ignore_letters = ['!', '?', ',', '.']
-intents_file = open('SongBot\static\intents.json').read()
+intents_file = open('static\intents.json').read()
 intents = json.loads(intents_file)
 
 for intent in intents['intents']:
@@ -269,9 +269,14 @@ def song_emotion():
     len1 = len(msg)
     tone_analysis = tone_analyzer.tone(
         {'text': msg[len1-1]+" "+msg[len1-2]+" "+msg[len1-3]+" "+msg[len1-4]+" "+msg[len1-5]},
-        content_type='application/json'
-    ).get_result()
+        content_type='application/json').get_result()
+    # tone_analysis = tone_analyzer.tone(
+    #     {'text': msg[len1-1]},
+    #     content_type='application/json'
+    # ).get_result()
     dic1 = dict()
+    print(msg)
+    print(tone_analysis)
     emotion=tone_analysis["document_tone"]["tones"][0]["tone_name"]
     dic1['emotion'] = emotion
     import requests
@@ -303,8 +308,8 @@ for i in range(5):
 ans = song_emotion()
 print("Emotion : "+ans['emotion'])
 
-ans = song_emotion()
-print("Emotion : "+ans['emotion'])
+# ans = song_emotion()
+# print("Emotion : "+ans['emotion'])
 ans.pop('emotion')
 lst = list(ans.keys())
 print("Song Recommendations : ")
