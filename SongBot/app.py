@@ -20,7 +20,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
 import pickle
-intents_file = open('static\intents.json').read()
+intents_file = open('Songbot\static\intents.json').read()
 intents = json.loads(intents_file)
 
 import nltk
@@ -95,9 +95,9 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
-intents = json.loads(open('static\intents.json').read())
-words = pickle.load(open('static\words.pkl','rb'))
-classes = pickle.load(open('static\classes.pkl','rb'))
+intents = json.loads(open('Songbot\static\intents.json').read())
+words = pickle.load(open('Songbot\static\words.pkl','rb'))
+classes = pickle.load(open('Songbot\static\classes.pkl','rb'))
 def clean_up_sentence(sentence):
     # tokenize the pattern - splitting words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -156,7 +156,7 @@ words=[]
 classes = []
 documents = []
 ignore_letters = ['!', '?', ',', '.']
-intents_file = open('static\intents.json').read()
+intents_file = open('Songbot\static\intents.json').read()
 intents = json.loads(intents_file)
 
 for intent in intents['intents']:
