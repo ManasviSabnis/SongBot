@@ -6,6 +6,7 @@
 
 
 import anvil.server
+from paralleldots import emotion
 anvil.server.connect("D6SOHFGMNUW666RMON7YMVG3-I5YEXCCDPSRUNCJW")
 
 # from google.colab import drive
@@ -353,14 +354,17 @@ def create():
 def recommend():
     msg = json.loads(request.form['message'])
     ans = song_emotion()
+    print ("ans", ans)
+    emotion = ans['emotion']
     print("Emotion : "+ans['emotion'])
     ans.pop('emotion')
     lst = list(ans.keys())
     print("Song Recommendations : ")
+    songlst = "Emotion : "+ emotion + "\n"
     for i in range(10):
+        songlst = songlst + "Song_name : "+lst[i] + "\n" + "Song_URL : " +  "<a href =" + ans[lst[i]] + ">" + ans[lst[i]] + "</a>" + "\n"
         print("Song_name : "+lst[i])
         print("Song_URL : "+ans[lst[i]])
-    return "abc"
-
+    return songlst
 if __name__ == "__main__":
     app.run()
