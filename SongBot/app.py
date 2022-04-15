@@ -315,9 +315,14 @@ print(payload)
 
 
 
+from flask import Flask, render_template, url_for, request, session, redirect, flash
 
+# from flask_pymongo import PyMongo
+# import bcrypt
+# from pymongo import MongoClient, ssl_support
+# mongo = MongoClient('mongodb+srv://amansheth:aman123@rc.xliti.mongodb.net/test', ssl_cert_reqs=ssl_support.CERT_NONE)
 
-from flask import Flask, render_template, request
+# from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.static_folder = 'static'
