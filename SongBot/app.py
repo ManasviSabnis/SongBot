@@ -341,6 +341,7 @@ def feedback():
 
 @app.route("/statistics")
 def statistics():
+	#print(data)
     return render_template("statistics.html")
 # @app.route("/get")
 # def get_bot_response():
