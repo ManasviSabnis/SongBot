@@ -130,7 +130,7 @@
                             const msgText = msgerInput.value;
                             if (!msgText) return;
                       
-                            appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+                            appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText, autocomplete="off");
                             msgerInput.value = "";
                             botResponse(msgText);
                           });
@@ -166,11 +166,11 @@
                             
                             {
                               
-                              $.post("/create", { message: rawText }).done(function (data) {
+                              $.post("/create", { message: rawText }).done(function (data)  {
                                 console.log(rawText);
                                 console.log(data);
-                                const msgText = data;
-                                appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+                                const msgText = data; 
+                                appendMessage(BOT_NAME, BOT_IMG, "left", msgText, autocomplete="off");
                         
                               });
                             }

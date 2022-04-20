@@ -5,7 +5,9 @@
 # drive.mount('/content/drive')
 
 
+# from crypt import methods
 import anvil.server
+from matplotlib.ft2font import BOLD
 from paralleldots import emotion
 anvil.server.connect("D6SOHFGMNUW666RMON7YMVG3-I5YEXCCDPSRUNCJW")
 
@@ -335,11 +337,11 @@ def index():
 def bot():
     return render_template("bot.html")
 
-@app.route("/feedback")
+@app.route("/feedback", methods=['POST','GET'])
 def feedback():
     return render_template("feedback.html")
 
-@app.route("/statistics")
+@app.route("/statistics", methods=['POST','GET'])
 def statistics():
 	#print(data)
     return render_template("statistics.html")
@@ -366,18 +368,18 @@ def recommend():
     ans.pop('emotion')
     lst = list(ans.keys())
     print("Song Recommendations : ")
-    songlst = "Emotion : "+ emotion + "\n"
+    songlst = "Emotion : "+ emotion  + "\n"
     for i in range(10):
         songlst = songlst + "Song_name : "+lst[i] + "\n" + "Song_URL : " +  "<a href =" + ans[lst[i]] + ">" + ans[lst[i]] + "</a>" + "\n"
         print("Song_name : "+lst[i])
         print("Song_URL : "+ans[lst[i]])
     return songlst
 
-@app.route('/google-charts/pie-chart')
-def google_pie_chart():
-	data = {'Task' : 'Rate', 'Overall Experience' : 5, 'Songs Detected' : 5, 'Commute' : 2, 'Emotion Detected' : 5}
-	#print(data)
-	return render_template('pie-chart.html', data=data)
+# @app.route('/google-charts/pie-chart')
+# def google_pie_chart():
+# 	data = {'Task' : 'Rate', 'Overall Experience' : 5, 'Songs Detected' : 5, 'Commute' : 2, 'Emotion Detected' : 5}
+# 	#print(data)
+# 	return render_template('pie-chart.html', data=data)
 
 if __name__ == "__main__":
     app.run()
