@@ -372,5 +372,12 @@ def recommend():
         print("Song_name : "+lst[i])
         print("Song_URL : "+ans[lst[i]])
     return songlst
+
+@app.route('/google-charts/pie-chart')
+def google_pie_chart():
+	data = {'Task' : 'Rate', 'Overall Experience' : 5, 'Songs Detected' : 5, 'Commute' : 2, 'Emotion Detected' : 5}
+	#print(data)
+	return render_template('pie-chart.html', data=data)
+
 if __name__ == "__main__":
     app.run()
