@@ -88,7 +88,7 @@
                           </main>
                       
                           <form class = "msger-inputarea" action="/create" method="POST">
-                            <input type="text" name="message" class="msger-input" id="textInput" placeholder="Enter your message...">
+                            <input type="text" name="message" class="msger-input" id="textInput" placeholder="Enter your message..." autocomplete="off">
                             <button type="submit" class = "msger-send-btn">Send</button>
                             
                           </form>
@@ -130,7 +130,7 @@
                             const msgText = msgerInput.value;
                             if (!msgText) return;
                       
-                            appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText, autocomplete="off");
+                            appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
                             msgerInput.value = "";
                             botResponse(msgText);
                           });
@@ -170,7 +170,7 @@
                                 console.log(rawText);
                                 console.log(data);
                                 const msgText = data; 
-                                appendMessage(BOT_NAME, BOT_IMG, "left", msgText, autocomplete="off");
+                                appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
                         
                               });
                             }
