@@ -88,15 +88,15 @@
                           </main>
                       
                           <form class = "msger-inputarea" action="/create" method="POST">
-                            <input type="text" name="message" class="msger-input" id="textInput" placeholder="Enter your message..." autocomplete="off">
+                            <input type="text" name="message" class="msger-input" id="textInput" placeholder="Enter your message...">
                             <button type="submit" class = "msger-send-btn">Send</button>
-                            
+                            <button type = "submit" class="msger-send-btn" onclick="recommendSongs()">Listen To Songs</button>
                           </form>
                         </section>
                         <!-- partial -->
                         <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
                         <script>
-                        count = 0;
+                          // add count = 0 
                         function recommendSongs() {
 
                           var collection = document.querySelectorAll('.right-msg .msg-text');
@@ -161,38 +161,14 @@
                             // appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
                       
                             // Bot Response
-                            count = count+1;
-                            if (count<5)
-                            
-                            {
-                              
-                              $.post("/create", { message: rawText }).done(function (data)  {
-                                console.log(rawText);
-                                console.log(data);
-                                const msgText = data; 
-                                appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-                        
-                              });
-                            }
-                            else
-                            {
-                              count = 0;
-                              var collection = document.querySelectorAll('.right-msg .msg-text');
-          
-                              var msg = [];
-                              for(var i = 0; i < collection.length; ++i) {
-                                msg.push(collection[i].innerHTML)
-                              }   
-                              $.post("/recommend", { message: JSON.stringify(msg)}).done(function (data) {
-                              console.log(msg);
+                            // if count < 5 then call create else, recommend songs
+                            $.post("/create", { message: rawText }).done(function (data) {
+                              console.log(rawText);
                               console.log(data);
                               const msgText = data;
-                              // appendMessage(BOT_NAME, BOT_IMG, "left", "Emotion Detected: " + msgText);
                               appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
                       
                             });
-                            }
-                          
                       
                           }
                       
@@ -219,7 +195,7 @@
             </div>
         </div>
     </section>
-    <a id="back2Top" title="Back to top" href="/bot">&#10148;</a>
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
 	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
